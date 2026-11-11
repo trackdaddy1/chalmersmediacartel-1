@@ -33,7 +33,8 @@ Flat static site, no build step, no framework. Open any `.html` file directly in
 - `styles.css`: all styles; palette and fonts are CSS variables at the top. Fonts: Montserrat (headings, matches the logo) + Inter (body) from Google Fonts
 - `chalmers-logo.png` (cropped, web-sized logo) and `film-reel.png` (reel graphic used in the hero and as favicon), both cut from the original `chalmers-media-trans.png`
 - `docs/`: press kit PDF (linked) and media verification packet PDF (not currently linked)
-- Deployed to Vercel from `github.com/realjwill/chalmersmediacartel` (`main`). Client site: pushing needs J-Will's confirmation
+- Source: `github.com/realjwill/chalmersmediacartel` (**public** repo). The git repo root is this folder, so `index.html` is at the repo root. Work in progress is on the `redesign` branch.
+- **Hosting: NOT deployed anywhere** (verified 2026-11-10): no Vercel project in J-Will's account is linked to this repo, GitHub Pages is off, the repo has no deployment records, and `chalmersmediacartel.com` has no DNS. Don't describe it as live until that changes. When a Vercel project is created: Framework Preset "Other", Root Directory blank (repo root), no build command. Client site: pushing needs J-Will's confirmation
 
 ## Conventions
 

@@ -15,6 +15,10 @@
 - **Press kit PDF** (`docs/ChalmersMedia_PressKit.pdf`): page 2 "Contact Information" is still bracketed placeholders (`[Name / Title]`, `[Email Address]`, `[Phone Number]`, `[Website URL]`), and page 1 has the OLD mission statement. This PDF is what organizers download. Needs a regenerated version.
 - **Insurance wording mismatch**: site says "Liability insurance carried for assignments"; press kit says "Liability insurance available upon request." Pick the true one (with carrier details if carried) and make both match.
 
+## Hosting (not set up yet)
+
+- No Vercel project exists for this repo and `chalmersmediacartel.com` has no DNS (checked 2026-11-10). Decide: J-Will's Vercel account or the client's, and whether the client owns/wants that domain.
+
 ## Needed from client
 
 - **Inbox email** for booking requests: create the Formspree form, paste its URL into `formEndpoint` in `content.js`
