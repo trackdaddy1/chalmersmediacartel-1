@@ -15,9 +15,10 @@
 - **Press kit PDF** (`docs/ChalmersMedia_PressKit.pdf`): page 2 "Contact Information" is still bracketed placeholders (`[Name / Title]`, `[Email Address]`, `[Phone Number]`, `[Website URL]`), and page 1 has the OLD mission statement. This PDF is what organizers download. Needs a regenerated version.
 - **Insurance wording mismatch**: site says "Liability insurance carried for assignments"; press kit says "Liability insurance available upon request." Pick the true one (with carrier details if carried) and make both match.
 
-## Hosting (not set up yet)
+## Hosting (confirm with client)
 
-- No Vercel project exists for this repo and `chalmersmediacartel.com` has no DNS (checked 2026-11-10). Decide: J-Will's Vercel account or the client's, and whether the client owns/wants that domain.
+- Hosted on the client's own Vercel account. Redesign merged to `main` on 2026-11-10, but GitHub showed no sign of a Vercel build (no deployments, statuses, or checks, then or ever). Confirm in his dashboard that the project is connected to `realjwill/chalmersmediacartel`, branch `main`, Root Directory blank. If not, connect it (Settings > Git) or redeploy.
+- `chalmersmediacartel.com` has no DNS. Confirm which domain the client's site actually uses.
 
 ## Needed from client
 
