@@ -1,28 +1,46 @@
-# Chalmers Media Cartel — Project Context
+# Chalmers Media Cartel: Project Context
 
 ## Purpose
 
-This site's primary audience is event organizers checking whether Chalmers Media Cartel is a legitimate, credential-ready media crew before granting press passes. It is not a marketing or SEO play — don't optimize for search traffic or conversions here. See `GOALS.md` for what "done" means and `PLAN.md` for the active punch list.
+As of November 2026 this is a portfolio and booking site for Chalmers Media (sports, recruiting, and lifestyle photo/video), modeled loosely on the structure of inthegymhoops.com but in the Chalmers navy + lime palette. Families, athletes, coaches, and creators should be able to see the work, understand the services, and request a shoot.
+
+It still has a second audience: event organizers verifying the team before granting press passes. That content lives in the **Press & Credentials** section at `about.html#credentials`, which is the link the client pastes into credential applications. `credentials.html` is now just a redirect to that anchor so older links keep working. Never rename that `id`.
+
+See `GOALS.md` for what "done" means and `PLAN.md` for the punch list and what's still needed from the client.
 
 ## Accuracy rule (important)
 
-Never add, infer, or "fill in" a credential, insurance claim, client name, or experience stat that the client hasn't confirmed. This page gets checked by people deciding whether to credential the client for real events — an invented or wrong claim is a liability, not just a content gap. If a section is missing real content, leave it as-is and add it to `PLAN.md`'s "needed from client" list rather than guessing.
+Never add, infer, or "fill in" a credential, insurance claim, client name, price, testimonial, portfolio item, or experience stat that the client hasn't confirmed. Organizers still check this site before credentialing the client, and parents will hold them to what it says. If a section is missing real content, leave it out (or let it stay hidden) and add it to `PLAN.md` instead of guessing.
+
+Known exception: the three team members after Carlos Chalmers on `about.html` (Jordan Chalmers, Maya Torres, Andre Wells) are placeholder people from the original build, kept at J-Will's request on 2026-11-10. They must be replaced before the client relies on the site. See `PLAN.md`.
+
+## Brand naming
+
+The logo and the client's own About/Mission copy say **Chalmers Media**, so that's the display name across the site. The press kit PDF, the Instagram handle, the domain/repo, the footer copyright, and the Press & Credentials section use **Chalmers Media Cartel**. Keep the credentials section matching whatever the press kit PDF says.
 
 ## Stack
 
-Flat static site, no build process, no framework. Two pages now, split by job:
-- `index.html` — the portfolio/marketing page: hero, portfolio, services, about, contact (hash-anchor navigation: `#home`, `#portfolio`, `#services`, `#about`, `#contact`)
-- `credentials.html` — the dedicated verification page: press kit download, who we cover, coverage experience, standards/insurance, and a direct-contact block. Kept deliberately plain (no animated hero) so it reads as an official reference document, not a sales page. This is the page meant to be linked from a press credential application.
-- `main.js` — vanilla JS shared by both pages: mobile nav toggle, portfolio category filtering, contact form validation. Selectors are guarded (`if (el)` / empty `forEach`), so it's safe to include on a page that doesn't have all the elements.
-- `styles.css` — custom CSS, no Tailwind/Bootstrap, shared by both pages
-- `docs/` — press kit and media verification PDFs, linked from `credentials.html` and the header's persistent "Press Kit" button
-- Deployed to Vercel from `github.com/realjwill/chalmersmediacartel` (`main` branch); no `vercel.json` needed for a static multi-page site like this
+Flat static site, no build step, no framework. Open any `.html` file directly in a browser to preview (the Formspree form needs a real server/URL to actually send).
 
-To preview locally, just open `index.html` or `credentials.html` directly in a browser — no dev server required.
+- `index.html`: Home. Hero, Who We Are, services preview, Latest Work (videos, hidden until content.js has some), CTA band
+- `about.html`: client's About story + Mission, team, Press & Credentials (`#credentials`)
+- `services.html`: six service cards, each with a "Book this" link to `book.html?service=<slug>`
+- `portfolio.html`: videos + filterable photo gallery with a lightbox, all rendered from `content.js`; shows an "being updated, see Instagram" empty state when there's nothing yet
+- `book.html`: booking/inquiry form (Formspree), preselects the service from the `?service=` query
+- `credentials.html`: meta-refresh redirect to `about.html#credentials`
+- `content.js`: **the one file to edit for new work**: `videos` (YouTube IDs / Instagram URLs), `photos`, and `formEndpoint`
+- `main.js`: shared behavior (mobile nav, video embeds, gallery/filters/lightbox, form validation + submit). Every block checks its elements exist, so it's safe on every page
+- `styles.css`: all styles; palette and fonts are CSS variables at the top. Fonts: Montserrat (headings, matches the logo) + Inter (body) from Google Fonts
+- `chalmers-logo.png` (cropped, web-sized logo) and `film-reel.png` (reel graphic used in the hero and as favicon), both cut from the original `chalmers-media-trans.png`
+- `docs/`: press kit PDF (linked) and media verification packet PDF (not currently linked)
+- Deployed to Vercel from `github.com/realjwill/chalmersmediacartel` (`main`). Client site: pushing needs J-Will's confirmation
 
 ## Conventions
 
-- Adding a portfolio item: add a new `.portfolio-item` block in the portfolio section of `index.html` with the right `data-category` (`sports`, `music`, or `travel`) so the existing filter buttons in `main.js` pick it up.
-- The contact form currently validates client-side and shows a fake success message but discards the data (`main.js`, end of the submit handler, marked with a `TODO`). Don't wire this up without checking `PLAN.md` first — it's an intentionally deferred phase, not an oversight.
-- Social links: only link to profiles that are real and live. A dead `href="#"` icon looks worse on a verification page than no icon at all.
-- Nav links are page-aware, not templated: each HTML file's header has its own copy of the nav with correct relative paths (`index.html#section` from `credentials.html`, bare `#section` from `index.html`). If you add a third page, update the nav in both existing files too — there's no shared partial.
+- **Header/footer are duplicated in every page** (no partials). If you change the nav or footer, change it in all five pages. Each page marks its own nav link with `aria-current="page"`.
+- **Service slugs** (`recruiting`, `game-coverage`, `portraits`, `tournaments`, `social-reels`, `music-creators`, plus `credential` and `not-sure` in the form only) must match across the services page links, the home page links, and the `<option value>`s in `book.html`.
+- **Photo categories** in `content.js` are `sports`, `portraits`, `music` (labels live in `CATEGORY_LABELS` in `main.js`). Filter buttons are built only for categories that have photos.
+- **Form**: until `formEndpoint` is set, submitting shows an honest "not connected yet, nothing was sent" message. Never reintroduce a fake success message.
+- **YouTube** embeds are "lite": thumbnail first, real player (youtube-nocookie) loads on click. Instagram embeds load Instagram's script only if an Instagram item exists.
+- **Social links**: only link to profiles that are real and live.
+- **Scroll animations** (Home, Services, and Portfolio pages; About and Book intentionally static so the story text and the form stay calm; modeled on the reference site's Elementor entrance effects: headings slide in from the left, the Who We Are pair slides in from left/right, service tiles and videos zoom in): add `data-reveal="up|left|right|zoom"` to an element, or `data-reveal-stagger="zoom"` to a grid. A page using them needs the one-line `document.documentElement.classList.add('js')` script in its `<head>` (see `index.html`); without it the attributes are harmless and content just shows without animating. Respects the OS "reduce motion" setting.

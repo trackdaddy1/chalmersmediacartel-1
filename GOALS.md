@@ -1,19 +1,20 @@
 # Goal
 
-This site exists so event organizers can verify Chalmers Media Cartel's legitimacy when the team applies for press passes. It is a credential-verification site, not a marketing or lead-gen funnel — SEO, analytics, and traffic growth are not priorities here.
+The client asked (November 2026) for a site similar to inthegymhoops.com: a portfolio and booking site that shows off the work, lays out services, and makes it easy to request a shoot. It keeps the Chalmers navy + lime palette and stays a flat static site.
 
-The client didn't want the verification content and the portfolio/marketing content sharing one page, so the site is split in two: `index.html` is the portfolio/about/contact page, and `credentials.html` is the standalone verification page meant to be linked directly from a press credential application. Keep that split intact — don't fold `credentials.html` back into `index.html` as a section.
+Press-credential verification is still a job this site has to do, but it's now one section (`about.html#credentials`) instead of its own page.
 
 ## What "done" looks like for this version
 
-- No bracketed or placeholder text anywhere on the page (`[X]+`, `[Add ...]`, etc.)
-- No dead links — every button and icon goes somewhere real, or doesn't exist on the page at all
-- The press kit downloads correctly
-- Every claim on the page (insurance, years of experience, events covered) is real and something the client can stand behind if an organizer checks it
+- Real portfolio work on the site (videos in Latest Work and the Portfolio page, photos in the gallery)
+- The booking form delivers to the client's inbox (Formspree endpoint set in `content.js`)
+- No placeholder text, placeholder people, or dead links anywhere
+- Every claim (services, insurance, experience, team) is something the client can stand behind
+- The press kit PDF linked from the site is current and has no placeholders
 
 ## Explicitly not goals right now
 
+- Online payments / pay-at-booking (decided 2026-11-10: inquiry form only)
+- Live auto-updating social feeds (decided: hand-picked embeds in `content.js`)
+- A news/blog section or merch store
 - Migrating off vanilla HTML/CSS/JS
-- SEO (meta description, OpenGraph, sitemap, structured data)
-- Analytics
-- A working contact form backend — deferred, see `PLAN.md`

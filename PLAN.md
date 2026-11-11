@@ -1,20 +1,34 @@
 # Plan
 
-## Done
+## Done (Nov 10, 2026 redesign, branch `redesign`)
 
-- Fixed press kit download link to point at `docs/ChalmersMedia_PressKit.pdf` (was pointing at a missing `press-kit.pdf`)
-- Removed dead YouTube/TikTok icons from the contact section and footer (both were `href="#"`) — Instagram and Facebook links were already real and were left in place
+- Rebuilt as a five-page site (Home, About, Services, Portfolio, Book) modeled on inthegymhoops.com's structure, in the Chalmers palette
+- Client's new About story and Mission statement added verbatim to `about.html` (and excerpted on Home)
+- `credentials.html` folded into About as `#credentials`; old URL redirects there
+- Booking form rebuilt for Formspree with service preselect; shows an honest "not connected" message until the endpoint is set
+- Portfolio and Latest Work render from `content.js` and stay hidden until real content exists
+- Replaced the 10MB Instagram SVG and other logo images with inline icons; logo cropped and resized for web
 
-## Needed from client before these sections can be finished
+## Must fix before this goes live
 
-- **Portfolio** — real photos/videos for the 6 placeholder slots (sports/music/travel categories), to replace the empty `.placeholder` divs in the portfolio section
-- **Who We Cover / Coverage Experience** — real client, league, and event names to replace the bracketed placeholders (`index.html`, "Who We Cover" and "Coverage Experience" lists)
-- **Insurance** — real carrier name and coverage details for the "Liability insurance carried for assignments" line, or a decision to drop that line until it's real
-- **Years of experience** — a real number for the Highlights section (currently `[X]+ combined years`)
-- **YouTube/TikTok** — real profile URLs, if/when they exist, so those icons can be added back
+- **Placeholder team members**: Jordan Chalmers, Maya Torres, Andre Wells on `about.html` are not real people. Replace with the real crew (name, role, one line, ideally a headshot) or remove them. Note "Jordan Chalmers" also conflicts with the real founder, Carlos Chalmers.
+- **Press kit PDF** (`docs/ChalmersMedia_PressKit.pdf`): page 2 "Contact Information" is still bracketed placeholders (`[Name / Title]`, `[Email Address]`, `[Phone Number]`, `[Website URL]`), and page 1 has the OLD mission statement. This PDF is what organizers download. Needs a regenerated version.
+- **Insurance wording mismatch**: site says "Liability insurance carried for assignments"; press kit says "Liability insurance available upon request." Pick the true one (with carrier details if carried) and make both match.
 
-Until each of these is provided, leave the corresponding text/section as-is rather than inventing a placeholder-sounding number or name — a wrong or invented claim on a verification page is worse than an honest gap.
+## Needed from client
 
-## Deferred
+- **Inbox email** for booking requests: create the Formspree form, paste its URL into `formEndpoint` in `content.js`
+- **Contact email**: `info@chalmersmediacartel.com` is shown on About and Book but has never been confirmed as real
+- **Portfolio**: YouTube video links / Instagram post URLs, and photos (with category: sports, portraits, music)
+- **Pricing**: services show "Pricing on request" until real prices are provided
+- **Services review**: the six services were rebuilt from the old site's list plus the new About copy (recruiting highlights and portraits added; old "Sideline/Locker Room" and "Travel Storytelling" cards dropped, since the new About doesn't mention travel). Client should confirm the list and the deliverable bullets.
+- **Who We Cover**: real league/program/event names (section removed until provided)
+- **Coverage Experience**: confirm the four remaining lines are accurate
+- **Testimonials**: real quotes with names/titles, if they want a testimonials section like the reference site
+- **Hero photo/video**: optional background reel for the home hero (instructions in a comment in `index.html`)
+- **YouTube/TikTok**: real profile URLs if/when they exist
 
-- Contact form backend (currently shows a fake success message and discards the data — see `main.js`'s submit handler). Wire this up once the content above is finalized. Decide then between simple email forwarding (Formspree/Resend) or Supabase.
+## Cleanup (low priority)
+
+- Unused files still in the repo: `instagram-logo.svg` (10MB), `facebook-logo.png`, `tiktok-logo.png`, `youtube-logo.png`, `chalmers-media-trans.png` (source for the cropped logo). Safe to delete once confirmed.
+- `docs/ChalmersMedia_MediaVerificationPacket.pdf` is not linked anywhere. Decide whether to link it from Press & Credentials or remove it.

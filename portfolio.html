@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Chalmers Media</title>
+  <meta name="description" content="Highlights, game days, portraits, and the moments in between from Chalmers Media.">
+  <link rel="icon" type="image/png" href="film-reel.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Lets CSS hide [data-reveal] elements only when JS is running, so nothing stays invisible if JS fails -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Chalmers Media home">
+        <img src="chalmers-logo.png" alt="Chalmers Media" width="720" height="180">
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+          <li><a class="button primary small" href="book.html">Book a Shoot</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container" data-reveal="up">
+        <p class="eyebrow">Portfolio</p>
+        <h1>Our Work</h1>
+        <p>Highlights, game days, portraits, and the moments in between.</p>
+      </div>
+    </section>
+
+    <!-- Everything on this page fills from content.js. Sections stay hidden until they have real work. -->
+    <section class="section" data-hide-if-empty hidden>
+      <div class="container">
+        <div class="section-header" data-reveal="left">
+          <p class="eyebrow">Videos</p>
+          <h2>Highlights &amp; Reels</h2>
+        </div>
+        <div class="media-grid" data-video-feed data-reveal-stagger="zoom"></div>
+      </div>
+    </section>
+
+    <section class="section alt" data-hide-if-empty hidden>
+      <div class="container">
+        <div class="section-header" data-reveal="left">
+          <p class="eyebrow">Photos</p>
+          <h2>Gallery</h2>
+        </div>
+        <div class="filters" data-photo-filters aria-label="Filter photos"></div>
+        <div class="photo-grid" data-photo-grid data-reveal-stagger="zoom"></div>
+      </div>
+    </section>
+
+    <section class="section" data-portfolio-empty hidden>
+      <div class="container">
+        <div class="empty-state" data-reveal="zoom">
+          <p>Our portfolio is being updated. In the meantime, see our latest work on Instagram.</p>
+          <a class="button primary" href="https://instagram.com/ChalmersMediaCartel" target="_blank" rel="noopener">Follow on Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <dialog class="lightbox" aria-label="Photo viewer">
+      <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+      <figure>
+        <img src="" alt="">
+        <figcaption></figcaption>
+      </figure>
+    </dialog>
+
+    <section class="cta-band">
+      <div class="container cta-inner" data-reveal="zoom">
+        <div>
+          <h2>Ready To Get Seen?</h2>
+          <p>Let's capture your next game, meet, or milestone.</p>
+        </div>
+        <a class="button dark" href="book.html">Book a Shoot</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="chalmers-logo.png" alt="Chalmers Media" width="720" height="180">
+          <p>Bringing stories into focus that deserve to be seen.</p>
+          <div class="social-links">
+            <a href="https://instagram.com/ChalmersMediaCartel" aria-label="Chalmers Media on Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://facebook.com/ChalmersMedia" aria-label="Chalmers Media on Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-5 2.2-5 5v2H7v4h2v7h4v-7h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Work With Us</h2>
+          <ul>
+            <li><a href="book.html">Book a Shoot</a></li>
+            <li><a href="services.html">Our Services</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>For Organizers</h2>
+          <ul>
+            <li><a href="about.html#credentials">Press &amp; Credentials</a></li>
+            <li><a href="docs/ChalmersMedia_PressKit.pdf" target="_blank" rel="noopener">Press Kit (PDF)</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-year></span> Chalmers Media Cartel. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="content.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

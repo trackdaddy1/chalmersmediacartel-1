@@ -3,374 +3,196 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chalmers Media Cartel | Press-Ready Photo & Video Collective</title>
+  <title>Chalmers Media | Sports, Recruiting &amp; Lifestyle Photo + Video</title>
+  <meta name="description" content="Chalmers Media brings stories into focus that deserve to be seen: recruiting highlights, game coverage, and portraits for athletes, creators, and communities.">
+  <link rel="icon" type="image/png" href="film-reel.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <!-- Lets CSS hide [data-reveal] elements only when JS is running, so nothing stays invisible if JS fails -->
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-  <svg style="display:none" aria-hidden="true">
-    <symbol id="icon-sports" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <circle cx="12" cy="12" r="9"/>
-      <path d="M3 12h18M12 3a13 13 0 0 1 0 18M12 3a13 13 0 0 0 0 18M4.5 6.5a13 13 0 0 0 15 0M4.5 17.5a13 13 0 0 1 15 0"/>
-    </symbol>
-    <symbol id="icon-music" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path d="M9 18V5l11-2v13"/>
-      <circle cx="6" cy="18" r="3"/>
-      <circle cx="17" cy="16" r="3"/>
-    </symbol>
-    <symbol id="icon-travel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <circle cx="12" cy="12" r="10"/>
-      <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
-    </symbol>
-  </svg>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <div class="logo-wrap">
-      <img src="chalmers-media-trans.png" alt="Chalmers Media Cartel logo" class="logo">
-      <span class="site-title">Chalmers Media Cartel</span>
-    </div>
-    <div class="header-actions">
-      <a class="button primary small" href="docs/ChalmersMedia_PressKit.pdf" target="_blank" rel="noopener">Press Kit</a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="site-nav">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Chalmers Media home">
+        <img src="chalmers-logo.png" alt="Chalmers Media" width="720" height="180">
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="credentials.html">Press &amp; Credentials</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a class="button primary small" href="book.html">Book a Shoot</a></li>
         </ul>
       </nav>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <main>
-    <section id="home" class="hero">
+  <main id="main">
+    <section class="hero">
       <div class="hero-bg" aria-hidden="true">
-        <span class="hero-glow glow-1"></span>
-        <span class="hero-glow glow-2"></span>
+        <!-- To add a background reel later:
+             <video class="hero-media" src="images/hero.mp4" autoplay muted loop playsinline></video> -->
         <span class="hero-lines"></span>
-        <svg class="hero-sport-graphic"><use href="#icon-sports"></use></svg>
+        <img class="hero-reel" src="film-reel.png" alt="">
       </div>
-      <div class="hero-content">
-        <p class="eyebrow">Media collective • Sports | Music | Travel</p>
-        <h1>Cinematic Photo + Video Coverage For Sports, Music, And Travel.</h1>
-        <p class="subhead">Chalmers Media Cartel is a credential-ready team delivering press-grade visuals for organizers, teams, and venues. We move fast, stay sharp, and deliver footage that looks ready for broadcast and social in one shot.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#contact">Request Media Coverage</a>
-          <a class="button ghost" href="#portfolio">View Portfolio</a>
+      <div class="container">
+        <div class="hero-content" data-reveal="up">
+          <p class="eyebrow">Sports &bull; Recruiting &bull; Lifestyle</p>
+          <h1>Stories That <span class="accent">Deserve To Be Seen.</span></h1>
+          <p class="subhead">Photography and videography for athletes, creators, and communities. From highlights that introduce athletes to coaches to portraits that show the person behind the performance.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="book.html">Book a Shoot</a>
+            <a class="button ghost" href="services.html">Our Services</a>
+          </div>
         </div>
-        <p class="trust-line">Trusted by event organizers, coaches, and artists to capture the moments that matter.</p>
       </div>
     </section>
 
-    <section id="portfolio" class="section">
-      <div class="section-header">
-        <h2>Portfolio</h2>
-        <p>From packed gyms and late night venues to street level travel stories, we deliver media that looks ready for broadcast and social in one shot.</p>
-      </div>
-      <div class="filters" aria-label="Portfolio filters">
-        <button class="filter-button active" data-filter="all" aria-pressed="true">All</button>
-        <button class="filter-button" data-filter="sports" aria-pressed="false">Sports</button>
-        <button class="filter-button" data-filter="music" aria-pressed="false">Music</button>
-        <button class="filter-button" data-filter="travel" aria-pressed="false">Travel</button>
-      </div>
-      <div class="portfolio-grid">
-        <article class="portfolio-item" data-category="sports">
-          <div class="placeholder">
-            <svg class="placeholder-icon"><use href="#icon-sports"></use></svg>
-            <span class="placeholder-label">Sample coming soon</span>
-          </div>
-          <div class="item-text">
-            <h3>Championship Tournament Coverage</h3>
-            <p>High-speed action frames and cinematic slow motion clips from multi-day playoff runs.</p>
-          </div>
-        </article>
-        <article class="portfolio-item" data-category="music">
-          <div class="placeholder">
-            <svg class="placeholder-icon"><use href="#icon-music"></use></svg>
-            <span class="placeholder-label">Sample coming soon</span>
-          </div>
-          <div class="item-text">
-            <h3>Festival Main Stage Set</h3>
-            <p>Dynamic stage lighting captured with clean sound beds ready for quick promo edits.</p>
-          </div>
-        </article>
-        <article class="portfolio-item" data-category="travel">
-          <div class="placeholder">
-            <svg class="placeholder-icon"><use href="#icon-travel"></use></svg>
-            <span class="placeholder-label">Sample coming soon</span>
-          </div>
-          <div class="item-text">
-            <h3>Urban Night Shoot</h3>
-            <p>Editorial city visuals with fast turnarounds for destination partners and press.</p>
-          </div>
-        </article>
-        <article class="portfolio-item" data-category="sports">
-          <div class="placeholder">
-            <svg class="placeholder-icon"><use href="#icon-sports"></use></svg>
-            <span class="placeholder-label">Sample coming soon</span>
-          </div>
-          <div class="item-text">
-            <h3>Sideline + Locker Room Story</h3>
-            <p>Behind-the-scenes access documented respectfully for teams and credentialed media.</p>
-          </div>
-        </article>
-        <article class="portfolio-item" data-category="music">
-          <div class="placeholder">
-            <svg class="placeholder-icon"><use href="#icon-music"></use></svg>
-            <span class="placeholder-label">Sample coming soon</span>
-          </div>
-          <div class="item-text">
-            <h3>Late Night Venue Series</h3>
-            <p>Multi-artist sets with sharp stills and reels ready for managers and promoters.</p>
-          </div>
-        </article>
-        <article class="portfolio-item" data-category="travel">
-          <div class="placeholder">
-            <svg class="placeholder-icon"><use href="#icon-travel"></use></svg>
-            <span class="placeholder-label">Sample coming soon</span>
-          </div>
-          <div class="item-text">
-            <h3>Destination Featurette</h3>
-            <p>On-location storytelling built for web, social, and quick broadcast pickups.</p>
-          </div>
-        </article>
+    <section class="section">
+      <div class="container intro-grid">
+        <div data-reveal="left">
+          <p class="eyebrow">Who We Are</p>
+          <h2>Every Journey <span class="accent">Matters.</span></h2>
+        </div>
+        <div data-reveal="right">
+          <p>As a sports parent watching his daughter compete in gymnastics and track, founder Carlos Chalmers picked up a camera to preserve moments he knew would pass too quickly. Those videos soon helped capture the attention of college recruiters, and a parent's desire to document the journey grew into a passion for helping others share theirs.</p>
+          <p>Today, Chalmers Media connects sports, recruiting, and lifestyle through photography and videography, capturing both the performance and the person behind it.</p>
+          <a class="text-link" href="about.html">Read our story</a>
+        </div>
       </div>
     </section>
 
-    <section id="services" class="section">
-      <div class="section-header">
-        <h2>Services</h2>
-        <p>Chalmers Media Cartel is your one-stop squad for visuals around sports, music, and travel experiences.</p>
-      </div>
-      <div class="services-grid">
-        <article class="service-card">
-          <h3>Full Game Coverage (Photo + Video)</h3>
-          <p>Complete coverage from warm-ups to the final buzzer with broadcast-ready delivery.</p>
-          <ul class="deliverables">
-            <li>Same day preview selects</li>
-            <li>Web and print ready files</li>
-            <li>Clips tailored for Reels / TikTok / Shorts</li>
-          </ul>
-        </article>
-        <article class="service-card">
-          <h3>Sideline, Locker Room, And Behind The Scenes</h3>
-          <p>Respectful, credential-safe coverage that keeps the story moving without disrupting the bench.</p>
-          <ul class="deliverables">
-            <li>Quiet, non-intrusive shooting</li>
-            <li>Clear approvals on sensitive moments</li>
-            <li>Editable reels for program social teams</li>
-          </ul>
-        </article>
-        <article class="service-card">
-          <h3>Tournament And Multi Day Packages</h3>
-          <p>Consistent coverage for weekend runs or extended showcases with rapid nightly turnarounds.</p>
-          <ul class="deliverables">
-            <li>Shot lists aligned with coordinators</li>
-            <li>Daily highlight drops</li>
-            <li>Organized delivery by team/event</li>
-          </ul>
-        </article>
-        <article class="service-card">
-          <h3>Live Music And Festival Coverage</h3>
-          <p>Clean stage visuals, crowd energy, and artist moments ready for PR blasts and socials.</p>
-          <ul class="deliverables">
-            <li>Multi-artist stage rotation</li>
-            <li>Backstage capture with approvals</li>
-            <li>Audio-ready clips for quick edits</li>
-          </ul>
-        </article>
-        <article class="service-card">
-          <h3>On Location Travel Storytelling</h3>
-          <p>City-to-city visuals with a cinematic edge for tourism partners and editorial features.</p>
-          <ul class="deliverables">
-            <li>Destination b-roll and hero stills</li>
-            <li>Interviews with local voices</li>
-            <li>Packaged content for press use</li>
-          </ul>
-        </article>
-        <article class="service-card">
-          <h3>Social Media Highlight Reels</h3>
-          <p>Punchy edits optimized for feeds and stories without losing the cinematic feel.</p>
-          <ul class="deliverables">
-            <li>Platform-specific ratios</li>
-            <li>Motion titles and ID slates</li>
-            <li>Ready-to-post file delivery</li>
-          </ul>
-        </article>
-      </div>
-      <div class="why-us">
-        <h3>Why work with Chalmers Media Cartel</h3>
-        <ul>
-          <li>Professional behavior at venues</li>
-          <li>Respect for credential rules and boundaries</li>
-          <li>Clear communication with media coordinators</li>
-          <li>Fast turnaround and organized delivery</li>
-          <li>Built to work in intense, fast paced environments</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="section-header">
-        <h2>About</h2>
-        <p>We are a squad built to tell real stories of athletes, artists, and places with urgency and respect.</p>
-      </div>
-      <div class="about-grid">
-        <div class="mission">
-          <h3>Mission</h3>
-          <p>At Chalmers Media, our mission is to capture the rhythm, passion, and raw intensity of sports through world-class photography, cinematic videography, and powerful music production. We exist to amplify athletes’ stories, elevate youth and grassroots talent, and create unforgettable visuals and soundscapes that move audiences and inspire communities. Through creativity, culture, and commitment, we bring every moment to life.</p>
+    <section class="section alt">
+      <div class="container">
+        <div class="section-header split" data-reveal="left">
+          <div>
+            <p class="eyebrow">What We Do</p>
+            <h2>Our Services</h2>
+            <p>Imagery that helps talent get seen, gives personal stories a voice, and preserves memories that grow more meaningful with time.</p>
+          </div>
+          <a class="text-link" href="services.html">All services</a>
         </div>
-        <div class="highlights">
-          <h3>Highlights</h3>
-          <ul>
-            <li>[X]+ combined years covering sports and music</li>
-            <li>Experience capturing championship games, sold out shows, and city travel stories</li>
-            <li>Fast, organized media delivery to teams, artists, and organizers</li>
-          </ul>
-        </div>
-      </div>
-      <div class="team">
-        <h3>Team</h3>
-        <div class="team-grid">
-          <article class="team-card">
-            <h4>Jordan Chalmers</h4>
-            <p class="role">Lead Sports Photographer</p>
-            <p>Specializes in high speed sports action and sideline storytelling.</p>
+        <div class="services-grid" data-reveal-stagger="zoom">
+          <article class="service-card">
+            <p class="service-num">01</p>
+            <h3>Recruiting Highlight Videos</h3>
+            <p>Highlight reels that help athletes introduce themselves to college coaches.</p>
+            <div class="service-foot"><a class="text-link" href="book.html?service=recruiting">Book this</a></div>
           </article>
-          <article class="team-card">
-            <h4>Maya Torres</h4>
-            <p class="role">Lead Videographer</p>
-            <p>Tracks game pace and stage energy with cinematic handheld and gimbal work.</p>
+          <article class="service-card">
+            <p class="service-num">02</p>
+            <h3>Game &amp; Event Coverage</h3>
+            <p>Photo and video coverage from warm-ups to the final buzzer.</p>
+            <div class="service-foot"><a class="text-link" href="book.html?service=game-coverage">Book this</a></div>
           </article>
-          <article class="team-card">
-            <h4>Andre Wells</h4>
-            <p class="role">Editor &amp; Creative Director</p>
-            <p>Cuts footage into punchy social clips that still feel editorial and premium.</p>
+          <article class="service-card">
+            <p class="service-num">03</p>
+            <h3>Athlete Portraits &amp; Lifestyle</h3>
+            <p>Portraits and everyday moments that express who an athlete is off the field.</p>
+            <div class="service-foot"><a class="text-link" href="book.html?service=portraits">Book this</a></div>
+          </article>
+          <article class="service-card">
+            <p class="service-num">04</p>
+            <h3>Tournament &amp; Multi-Day Packages</h3>
+            <p>Consistent coverage for weekend runs and extended showcases.</p>
+            <div class="service-foot"><a class="text-link" href="book.html?service=tournaments">Book this</a></div>
+          </article>
+          <article class="service-card">
+            <p class="service-num">05</p>
+            <h3>Social Media Highlight Reels</h3>
+            <p>Punchy edits made for feeds and stories without losing the cinematic feel.</p>
+            <div class="service-foot"><a class="text-link" href="book.html?service=social-reels">Book this</a></div>
+          </article>
+          <article class="service-card">
+            <p class="service-num">06</p>
+            <h3>Live Music &amp; Creator Coverage</h3>
+            <p>Stage visuals, crowd energy, and artist moments ready for promo and socials.</p>
+            <div class="service-foot"><a class="text-link" href="book.html?service=music-creators">Book this</a></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section contact">
-      <div class="section-header">
-        <h2>Contact</h2>
-        <p>Media coordinators and event staff—use the form for credential requests and coverage bookings.</p>
+    <!-- Fills from content.js (videos). Stays hidden until there is real work to show. -->
+    <section class="section" data-hide-if-empty hidden>
+      <div class="container">
+        <div class="section-header split" data-reveal="left">
+          <div>
+            <p class="eyebrow">Latest Work</p>
+            <h2>Fresh From The Field</h2>
+          </div>
+          <a class="text-link" href="portfolio.html">Full portfolio</a>
+        </div>
+        <div class="media-grid" data-video-feed data-limit="3" data-reveal-stagger="zoom"></div>
       </div>
-      <div class="contact-grid">
-        <div class="form-wrap">
-          <h3>Media / Credential Requests</h3>
-          <p>Tell us about your event and what you need. We will confirm credentials, logistics, and delivery timelines.</p>
-          <form id="contact-form" novalidate>
-            <div class="form-group">
-              <label for="name">Name *</label>
-              <input type="text" id="name" name="name" required>
-              <small class="error" aria-live="polite"></small>
-            </div>
-            <div class="form-group">
-              <label for="organization">Organization / Team / Venue *</label>
-              <input type="text" id="organization" name="organization" required>
-              <small class="error" aria-live="polite"></small>
-            </div>
-            <div class="form-group">
-              <label for="role">Role *</label>
-              <select id="role" name="role" required>
-                <option value="">Select your role</option>
-                <option value="Media Coordinator">Media Coordinator</option>
-                <option value="Event Director">Event Director</option>
-                <option value="Coach / Team Staff">Coach / Team Staff</option>
-                <option value="PR / Marketing">PR / Marketing</option>
-                <option value="Other">Other</option>
-              </select>
-              <small class="error" aria-live="polite"></small>
-            </div>
-            <div class="form-group">
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="email" required>
-              <small class="error" aria-live="polite"></small>
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone" placeholder="Optional">
-              <small class="error" aria-live="polite"></small>
-            </div>
-            <div class="form-group">
-              <label for="event-name">Event Name *</label>
-              <input type="text" id="event-name" name="event-name" required>
-              <small class="error" aria-live="polite"></small>
-            </div>
-            <div class="form-group">
-              <label for="event-date">Event Date(s) *</label>
-              <input type="text" id="event-date" name="event-date" required>
-              <small class="error" aria-live="polite"></small>
-            </div>
-            <div class="form-group">
-              <label for="event-location">Event Location *</label>
-              <input type="text" id="event-location" name="event-location" required>
-              <small class="error" aria-live="polite"></small>
-            </div>
-            <fieldset class="form-group">
-              <legend>Type of Coverage Requested *</legend>
-              <div class="checkbox-group">
-                <label><input type="checkbox" name="coverage" value="Sports"> Sports</label>
-                <label><input type="checkbox" name="coverage" value="Music"> Music</label>
-                <label><input type="checkbox" name="coverage" value="Travel"> Travel</label>
-                <label><input type="checkbox" name="coverage" value="Other"> Other</label>
-              </div>
-              <small class="error" aria-live="polite"></small>
-            </fieldset>
-            <div class="form-group">
-              <label for="details">Additional Details</label>
-              <textarea id="details" name="details" rows="4" placeholder="Set times, access levels, deliverables, deadlines"></textarea>
-              <small class="error" aria-live="polite"></small>
-            </div>
-            <button type="submit" class="button primary">Submit Request</button>
-            <p class="form-message" role="status"></p>
-          </form>
+    </section>
+
+    <section class="cta-band">
+      <div class="container cta-inner" data-reveal="zoom">
+        <div>
+          <h2>Ready To Tell Your Story?</h2>
+          <p>Tell us about your athlete, team, or event and we'll take it from there.</p>
         </div>
-        <div class="contact-info">
-          <h3>General Inquiries and Social</h3>
-          <p>For general bookings, collaborations, or questions, reach out or find us here.</p>
-          <p class="email">info@chalmersmediacartel.com</p>
-          <!-- Update with real contact email -->
-          <div class="social-links">
-            <a href="https://instagram.com/ChalmersMediaCartel" aria-label="Instagram" target="_blank" rel="noopener">
-              <img src="instagram-logo.svg" alt="Instagram logo">
-            </a>
-            <a href="https://facebook.com/ChalmersMedia" aria-label="Facebook" target="_blank" rel="noopener">
-              <img src="facebook-logo.png" alt="Facebook logo">
-            </a>
-          </div>
-          <div class="contact-notes">
-            <p>We respond quickly to credential approvals and can coordinate credential forms, vest pick-up, and access zones in advance.</p>
-            <p>Operating hours flex for travel, tournaments, and late shows. If you need us on call, we set response SLAs before the event.</p>
-          </div>
-        </div>
+        <a class="button dark" href="book.html">Book a Shoot</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="footer-brand">
-      <img src="chalmers-media-trans.png" alt="Chalmers Media Cartel logo small" class="logo small">
-      <span>Chalmers Media Cartel</span>
-    </div>
-    <p class="copyright">&copy; <span id="year"></span> Chalmers Media Cartel. All rights reserved.</p>
-    <div class="social-links">
-      <a href="https://instagram.com/ChalmersMediaCartel" aria-label="Instagram" target="_blank" rel="noopener">
-        <img src="instagram-logo.svg" alt="Instagram logo">
-      </a>
-      <a href="https://facebook.com/ChalmersMedia" aria-label="Facebook" target="_blank" rel="noopener">
-        <img src="facebook-logo.png" alt="Facebook logo">
-      </a>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="chalmers-logo.png" alt="Chalmers Media" width="720" height="180">
+          <p>Bringing stories into focus that deserve to be seen.</p>
+          <div class="social-links">
+            <a href="https://instagram.com/ChalmersMediaCartel" aria-label="Chalmers Media on Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://facebook.com/ChalmersMedia" aria-label="Chalmers Media on Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-5 2.2-5 5v2H7v4h2v7h4v-7h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Work With Us</h2>
+          <ul>
+            <li><a href="book.html">Book a Shoot</a></li>
+            <li><a href="services.html">Our Services</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>For Organizers</h2>
+          <ul>
+            <li><a href="about.html#credentials">Press &amp; Credentials</a></li>
+            <li><a href="docs/ChalmersMedia_PressKit.pdf" target="_blank" rel="noopener">Press Kit (PDF)</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-year></span> Chalmers Media Cartel. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
+  <script src="content.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
